@@ -1,34 +1,20 @@
 import { useState } from "react";
 import Carousel from "./components/Carousel"
 import Image from "./components/Image";
+import Button from "./components/Button.jsx";
 
 import { posts } from "./db/posts.js";
 
 function App() {
 
   const [currentImg, setCurrentImg] = useState(0);
-
-  const next = () => {
-    return setCurrentImg((img) =>{ 
-      if(img >= posts.length - 1){
-        return img = 0;
-      }
-      return img + 1
-    })
-  }
-  const prev = () => {
-    return setCurrentImg((img) =>{ 
-      if(img <= 0){
-        return img = posts.length - 1;
-      }
-      return img - 1
-    })
-  }
-
   return (
     <>
+    <main id="main">
       <Carousel>
-      <button onClick={prev}>Prev</button>
+
+        <Button direction={"prev"} image={currentImg} handler={setCurrentImg} length={posts.length-1}/>
+
         {posts.map((post,index) => (
             currentImg === index &&
             <Image 
@@ -38,8 +24,11 @@ function App() {
               <img src={posts[currentImg].image || "https://placehold.co/600x400"} alt={posts[currentImg].title} />
             </Image>
         ))}
-        <button onClick={next}>Next</button>
+
+        <Button direction={"next"} image={currentImg} handler={setCurrentImg} length={posts.length-1}/>
+
       </Carousel>
+    </main>
     </>
   )
 }

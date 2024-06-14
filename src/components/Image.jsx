@@ -5,7 +5,7 @@ const Image = ({title, children}) => {
             <figure>
                 {children}
             </figure>
-            <div className="absolute bottom-0 w-full px-2 py-7 bg-neutral-600 text-white">
+            <div className="carouselImage">
                 <h1>{title}</h1>
             </div>
         </div>
