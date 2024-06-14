@@ -31,7 +31,7 @@ function App() {
   return (
     <>
     <main id="main">
-      <section className="p-5" onMouseEnter={() => setMouseHovering(true)} onMouseLeave={() => setMouseHovering(false)}>
+      <section className="p-5 flex flex-col items-center gap-y-6" onMouseEnter={() => setMouseHovering(true)} onMouseLeave={() => setMouseHovering(false)}>
         <Carousel>
 
           <Button direction={"prev"} {...commonProps}/>
@@ -50,13 +50,13 @@ function App() {
 
         </Carousel>
 
+        <section id="navigation" className="flex items-center gap-x-4">
+          {posts.map((post, index) => (
+              <Bullet key={`bulletNavigation-${post.id}`} {...commonProps} index={index}/>
+          ))}
+        </section>
       </section>
 
-      <section id="navigation" className="flex items-center gap-x-4">
-        {posts.map((post, index) => (
-            <Bullet key={`bulletNavigation-${post.id}`} {...commonProps} index={index}/>
-        ))}
-      </section>
 
     </main>
     </>
