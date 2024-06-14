@@ -2,10 +2,10 @@ const Image = ({title, children}) => {
 
     return(<>
         <div className="carouselImageWrapper">
-            <figure>
+            <figure className="carouselFigure">
                 {children}
             </figure>
-            <div className="carouselImage">
+            <div className="carouselTitle">
                 <h1>{title}</h1>
             </div>
         </div>
