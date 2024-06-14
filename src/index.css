@@ -14,7 +14,9 @@
 .carouselImage{
     @apply absolute bottom-0 w-full px-2 py-7 bg-neutral-600 text-white;
 }
-
+.carouselImageWrapper{
+    @apply border relative;
+}
 main{
     @apply h-screen flex items-center justify-center;
 }

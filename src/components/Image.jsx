@@ -1,7 +1,7 @@
 const Image = ({title, children}) => {
 
     return(<>
-        <div className="border relative">
+        <div className="carouselImageWrapper">
             <figure>
                 {children}
             </figure>
