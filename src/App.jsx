@@ -8,12 +8,19 @@ import { posts } from "./db/posts.js";
 function App() {
 
   const [currentImg, setCurrentImg] = useState(0);
+
+  const commonProps = {
+    image: currentImg,
+    handler: setCurrentImg,
+    length: posts.length - 1,
+  };
+
   return (
     <>
     <main id="main">
       <Carousel>
 
-        <Button direction={"prev"} image={currentImg} handler={setCurrentImg} length={posts.length-1}/>
+        <Button direction={"prev"} {...commonProps}/>
 
         {posts.map((post,index) => (
             currentImg === index &&
@@ -25,7 +32,7 @@ function App() {
             </Image>
         ))}
 
-        <Button direction={"next"} image={currentImg} handler={setCurrentImg} length={posts.length-1}/>
+        <Button direction={"next"} {...commonProps}/>
 
       </Carousel>
     </main>
