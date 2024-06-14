@@ -1,10 +1,9 @@
 import { MdKeyboardArrowLeft as PrevButton,
          MdKeyboardArrowRight as NextButton 
         } from "react-icons/md";
-
+import { useEffect } from "react";
 
 const Button = ({direction, handler, length}) => {
-    
     const prev = () => {
         return handler((image) =>{ 
           if(image <= 0){
@@ -21,8 +20,7 @@ const Button = ({direction, handler, length}) => {
           return image + 1
         })
       }
-
-
+      
     return(
         <>
         <button onClick={direction === 'prev'? prev : next } className="carouselButton">
