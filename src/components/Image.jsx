@@ -1,4 +1,4 @@
-const Image = ({title, image, children}) => {
+const Image = ({title, children}) => {
 
     return(<>
         <div className="border relative">
